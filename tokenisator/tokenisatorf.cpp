@@ -20,6 +20,21 @@ void Token :: SetValue(const char* str){
 		type = VAR;
 		return;
 	}
+	if(!strcmp(str,"ebx")){
+		value = EBX;
+		type = VAR;
+		return;
+	}
+	if(!strcmp(str,"ecx")){
+		value = ECX;
+		type = VAR;
+		return;
+	}
+	if(!strcmp(str,"edx")){
+		value = EDX;
+		type = VAR;
+		return;
+	}
 	if(!strcmp(str,"=")){
 		value = EQUAL;
 		type = OPER;
@@ -104,7 +119,7 @@ Token* Tokenisation(char* s){
 					p++;
 					if(s[p] == 'x'){
 						p++;
-						(token_array[i]).SetValue("eax");
+						(token_array[i]).SetValue("ebx");
 					}
 					else{
 						printf("ERR invalid sequense of symbols, maybe you wanted ebx \n");
@@ -115,7 +130,7 @@ Token* Tokenisation(char* s){
 					p++;
 					if(s[p] == 'x'){
 						p++;
-						(token_array[i]).SetValue("eax");
+						(token_array[i]).SetValue("ecx");
 					}
 					else{
 						printf("ERR invalid sequense of symbols, maybe you wanted ecx \n");
@@ -126,7 +141,7 @@ Token* Tokenisation(char* s){
 					p++;
 					if(s[p] == 'x'){
 						p++;
-						(token_array[i]).SetValue("eax");
+						(token_array[i]).SetValue("edx");
 					}
 					else{
 						printf("ERR invalid sequense of symbols, maybe you wanted edx \n");

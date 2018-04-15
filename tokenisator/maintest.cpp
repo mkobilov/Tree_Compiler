@@ -2,7 +2,7 @@
 
 int main(){
 	char* str;
-	strcpy(str,"eax = 66");
+	strcpy(str,"eax = ebx");
 	Tokenisation(str);
 	
 	
